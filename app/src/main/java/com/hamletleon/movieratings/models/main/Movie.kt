@@ -15,7 +15,7 @@ class Movie {
     @Embedded @SerializedName("belongs_to_collection") var belongToCollection: Any? = null
     var budget: Int = 0
 
-    @TypeConverters(RoomUtils::class) var genres: List<Genre> = emptyList()
+//    @TypeConverters(RoomUtils::class) var genres: List<Genre> = emptyList()
 
     var homepage: String? = null
     @SerializedName("imdb_id") var imdbId: String? = null
@@ -25,14 +25,14 @@ class Movie {
     var popularity: Float = 0f
     @SerializedName("poster_path") var posterPath: String? = null
 
-    @TypeConverters(RoomUtils::class) @SerializedName("production_companies") var productionCompanies: List<ProductionCompany> = emptyList()
-    @TypeConverters(RoomUtils::class) @SerializedName("production_countries") var productionCountries: List<InternationalInfo> = emptyList()
+//    @TypeConverters(RoomUtils::class) @SerializedName("production_companies") var productionCompanies: List<ProductionCompany> = emptyList()
+//    @TypeConverters(RoomUtils::class) @SerializedName("production_countries") var productionCountries: List<InternationalInfo> = emptyList()
 
     @SerializedName("release_date") var releaseDate: String = ""
     var revenue: Int = 0
     var runtime: Int? = null
 
-    @TypeConverters(RoomUtils::class) @SerializedName("spoken_languages") var spokenLanguages: List<InternationalInfo> = emptyList()
+//    @TypeConverters(RoomUtils::class) @SerializedName("spoken_languages") var spokenLanguages: List<InternationalInfo> = emptyList()
 
     var status: String = MovieStatus.Rumored.value
     var tagline: String? = null

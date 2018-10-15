@@ -1,19 +1,16 @@
 package com.hamletleon.movieratings
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 
 import com.hamletleon.movieratings.ui.main.MainFragment
+import com.hamletleon.movieratings.utils.replaceFragmentInActivity
+import dagger.android.support.DaggerAppCompatActivity
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : DaggerAppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity)
-        if (savedInstanceState == null) {
-            supportFragmentManager.beginTransaction()
-                    .replace(R.id.container, MainFragment.newInstance())
-                    .commitNow()
-        }
+        supportFragmentManager.replaceFragmentInActivity(R.id.container, MainFragment.newInstance())
     }
 }

@@ -1,13 +1,15 @@
-package com.hamletleon.movieratings.injection.modules
+package com.hamletleon.movieratings.di.modules
 
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
+import javax.inject.Singleton
 
-@Module(includes = [ContextModule::class])
+@Module
 class OkHttpClientModule {
 
     @Provides
+    @Singleton
     fun okHttpClient(): OkHttpClient {
         return OkHttpClient()
                 .newBuilder()

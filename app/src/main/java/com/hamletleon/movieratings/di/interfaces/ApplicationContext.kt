@@ -1,4 +1,4 @@
-package com.hamletleon.movieratings.injection.interfaces
+package com.hamletleon.movieratings.di.interfaces
 
 import javax.inject.Qualifier
 

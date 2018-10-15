@@ -1,8 +1,7 @@
-package com.hamletleon.movieratings.injection.modules
+package com.hamletleon.movieratings.di.modules
 
 import android.content.Context
-import com.hamletleon.movieratings.injection.interfaces.ApplicationContext
-import com.hamletleon.movieratings.injection.interfaces.MainScope
+import com.hamletleon.movieratings.di.interfaces.ApplicationContext
 import com.squareup.picasso.OkHttp3Downloader
 import com.squareup.picasso.Picasso
 import dagger.Module
@@ -12,7 +11,7 @@ import okhttp3.OkHttpClient
 @Module(includes = [OkHttpClientModule::class])
 class PicassoModule {
 
-    @MainScope
+//    @FragmentScope
     @Provides
     fun picasso(@ApplicationContext context: Context, okHttp3Downloader: OkHttp3Downloader): Picasso {
         return Picasso.Builder(context)
