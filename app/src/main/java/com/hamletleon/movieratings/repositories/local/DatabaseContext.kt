@@ -5,8 +5,9 @@ import android.arch.persistence.room.Database
 import android.arch.persistence.room.Room
 import android.arch.persistence.room.RoomDatabase
 import android.content.Context
+import com.hamletleon.movieratings.models.main.Movie
 
-@Database(entities = [], version = 1)
+@Database(entities = [Movie::class], version = 1)
 abstract class DatabaseContext: RoomDatabase() {
 
     companion object {
@@ -15,6 +16,7 @@ abstract class DatabaseContext: RoomDatabase() {
         fun getInstance(context: Context): DatabaseContext =
                 INSTANCE ?: synchronized(DatabaseContext::class) {
                     INSTANCE ?: buildDatabase(context).also { INSTANCE = it }
+
                 }
 
         private fun buildDatabase(context: Context) = Room

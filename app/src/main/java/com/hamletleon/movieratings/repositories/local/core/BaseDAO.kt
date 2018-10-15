@@ -1,4 +1,4 @@
-package com.hamletleon.movieratings.repositories.local.shared
+package com.hamletleon.movieratings.repositories.local.core
 
 import android.arch.persistence.room.Dao
 import android.arch.persistence.room.Insert
@@ -33,7 +33,7 @@ abstract class BaseDAO<T> {
     open fun upsert(list: List<T>?){
         if(list == null) return
         val insertedResults: List<Long> = insert(list)
-        val updateList: MutableList<T> = ArrayList()
+        val updateList: MutableList<T> = mutableListOf()
 
         for ((idx, obj) in insertedResults.withIndex()){
             if (obj <= -1){
